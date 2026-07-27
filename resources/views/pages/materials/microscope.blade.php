@@ -197,6 +197,29 @@
             >
                 <div class="px-5 py-5 space-y-6">
 
+                    {{-- MEDIA: Video / Gambar --}}
+                    @if($section->youtube_id || $section->image_path)
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        @if($section->youtube_id)
+                        <div class="rounded-xl overflow-hidden aspect-video bg-black shadow-sm border border-outline-variant/30 {{ !$section->image_path ? 'md:col-span-2' : '' }}">
+                            <iframe 
+                                class="w-full h-full" 
+                                src="https://www.youtube.com/embed/{{ $section->youtube_id }}" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                        @endif
+
+                        @if($section->image_path)
+                        <div class="rounded-xl overflow-hidden shadow-sm border border-outline-variant/30 {{ !$section->youtube_id ? 'md:col-span-2 max-w-2xl mx-auto' : '' }}">
+                            <img src="{{ $section->image_url }}" alt="{{ $section->title }}" class="w-full h-full object-cover">
+                        </div>
+                        @endif
+                    </div>
+                    @endif
+
                     {{-- Konten deskripsi utama --}}
                     <div class="prose prose-sm max-w-none text-on-surface leading-relaxed">
                         @foreach(explode("\n\n", $section->description) as $para)
