@@ -49,7 +49,7 @@ class MaterialController extends Controller
     public function microscope(): View
     {
         $sections = Material::where('type', 'microscope')
-            ->select(['id', 'title', 'slug', 'description', 'history_founder', 'quran_verse', 'image_path'])
+            ->select(['id', 'title', 'slug', 'description', 'history_founder', 'quran_verse', 'image_path', 'youtube_id'])
             ->get();
 
         return view('pages.materials.microscope', compact('sections'));
