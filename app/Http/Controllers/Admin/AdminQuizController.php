@@ -176,7 +176,7 @@ class AdminQuizController extends Controller
         $sheet->getRowDimension(3)->setRowHeight(6);
 
         // ── Header Kolom ──────────────────────────────────────────────
-        $headers = ['No', 'Nama Siswa', 'NISN', 'Nilai (0–100)', 'Jumlah Benar', 'Total Soal', 'Waktu Pengerjaan', 'Tanggal Ujian'];
+        $headers = ['No', 'Nama Siswa', 'NIS', 'Nilai (0–100)', 'Jumlah Benar', 'Total Soal', 'Waktu Pengerjaan', 'Tanggal Ujian'];
         $cols    = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
 
         foreach ($headers as $i => $header) {
@@ -218,7 +218,7 @@ class AdminQuizController extends Controller
 
             $sheet->setCellValue('A' . $row, $index + 1);
             $sheet->setCellValue('B' . $row, $attempt->user->name ?? '-');
-            $sheet->setCellValue('C' . $row, $attempt->user->nisn ?? '-');
+            $sheet->setCellValue('C' . $row, $attempt->user->nis ?? '-');
             $sheet->setCellValue('D' . $row, (float) $attempt->score);
             $sheet->setCellValue('E' . $row, $benar);
             $sheet->setCellValue('F' . $row, $totalSoal);
