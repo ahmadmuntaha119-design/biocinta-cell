@@ -136,6 +136,7 @@ Route::middleware(['auth', 'verified.password', 'role:admin'])
 
     // Panel Kuis — Fase 8
     Route::post('quizzes/{quiz}/toggle', [AdminQuizController::class, 'toggle'])->name('quizzes.toggle');
+    Route::get('quizzes/{quiz}/export', [AdminQuizController::class, 'exportResults'])->name('quizzes.export');
     Route::resource('quizzes', AdminQuizController::class);
     Route::resource('quizzes.questions', AdminQuizQuestionController::class)->shallow();
 

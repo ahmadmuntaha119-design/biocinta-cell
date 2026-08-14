@@ -70,6 +70,16 @@
                     </button>
                 </form>
             </div>
+
+            {{-- Export Excel Button --}}
+            <div class="pt-2 sm:pt-0 sm:border-l sm:border-slate-200 sm:pl-4">
+                <a href="{{ route('admin.quizzes.export', $quiz) }}"
+                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all min-h-[40px] shadow-sm bg-emerald-50 text-emerald-700 border border-emerald-200 hover:bg-emerald-100"
+                   title="Download nilai seluruh peserta kuis dalam format Excel">
+                    <span class="material-symbols-outlined" style="font-size:16px;">download</span>
+                    Export Nilai Excel
+                </a>
+            </div>
         </div>
     </div>
 
