@@ -16,7 +16,7 @@
             <a href="{{ route('admin.leaderboard.export') }}"
                class="inline-flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm hover:shadow transition-all min-h-[44px]">
                 <span class="material-symbols-outlined" style="font-size:20px;">download</span>
-                Ekspor Dokumen (CSV)
+                Ekspor Dokumen Excel (.xlsx)
             </a>
         </div>
     </div>
